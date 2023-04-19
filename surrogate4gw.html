@@ -14607,11 +14607,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </ul>
 <!-- (recall Collin's guest lectures). -->
 <ul>
-<li>Enter <strong>surrogates</strong>, which are fast(er) models that are trained on existing waveforms at certain parameter values, but can give accurate waveforms for parameter values inside the training parameter space. It can roughly be seen as an interpolation problem.</li>
-</ul>
-<!-- -  A lot of LIGO data analysis relies of surrogate models. EOB frequency-domain Reduced Order Models (which Michael works on) is the the standard way of using EOB models in LIGO. LVK used the NR surrogates as the main model for the first intermediate-mass BH discovery. -->
-<ul>
-<li>The literature followed for this notebook is,</li>
+<li><p>Enter <strong>surrogates</strong>, which are fast(er) models that are trained on existing waveforms at certain parameter values, but can give accurate waveforms for parameter values inside the training parameter space. It can roughly be seen as an interpolation problem.</p>
+</li>
+<li><p>A lot of LIGO data analysis relies of surrogate models. EOB frequency-domain Reduced Order Models (https://arxiv.org/abs/1402.4146, Michael Puerrer) is the the standard way of using EOB models in LIGO. Also, the LVK used the NR surrogates as the main model for the first intermediate-mass BH discovery.</p>
+</li>
+<li><p>The literature followed for this notebook is,</p>
+</li>
 </ul>
 <p><strong>Fast prediction and evaluation of gravitational waveforms using surrogate models</strong>, <em>Scott E. Field, Chad R. Galley, Jan S. Hesthaven, Jason Kaye, Manuel Tigli</em> (https://arxiv.org/abs/1308.3565).</p>
 <ul>
@@ -15745,10 +15746,22 @@ Wall time: 210 ms
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>50X Speedup!</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Limitations:">Limitations:<a class="anchor-link" href="#Limitations:">&#182;</a></h2><ul>
 <li><p>Only valid within the region of the parameter space the model was trained on. They can in principle extrapolate, but cannot be expected to give very accurate waveforms in the extrapolated region. This also includes $t \in [t_{min}, t_{max}]$.</p>
 </li>
-<li><p>They are not a waveform generation algorithm, i.e. they require already existing waveforms at some parameter values. It hence does not replace the need for NR or EOB based waveform models!</p>
+<li><p>They are not a waveform generation algorithm, i.e. they require already existing waveforms at some parameter values. They hence do not replace the need for NR or EOB based waveform models!</p>
 </li>
 </ul>
 
@@ -15762,7 +15775,7 @@ Wall time: 210 ms
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Considerations-to-be-made-while-building-the-surrogate:">Considerations to be made while building the surrogate:<a class="anchor-link" href="#Considerations-to-be-made-while-building-the-surrogate:">&#182;</a></h2><ul>
+<h2 id="Considerations/Choices-to-be-made-while-building-the-surrogate:">Considerations/Choices to be made while building the surrogate:<a class="anchor-link" href="#Considerations/Choices-to-be-made-while-building-the-surrogate:">&#182;</a></h2><ul>
 <li>The distribution of the training set parameters</li>
 <li>Choice of decomposition of waveforms</li>
 <li>Number of basis elements or the tolerance on basis and ei errors</li>
